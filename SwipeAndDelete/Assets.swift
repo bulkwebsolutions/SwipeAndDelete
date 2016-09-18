@@ -12,7 +12,6 @@ import UIKit
 
 struct Person {
     var name: String
-//    var age: Int
     var image: NSData
 }
 

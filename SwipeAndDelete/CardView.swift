@@ -14,10 +14,11 @@ class CardView: UIView {
         didSet {
             
             // Property Configuration
-            imageView.image = UIImage(contentsOfFile: "person0.jpg") //(data: person.image)
+            let image = UIImage(data: person.image)
+            imageView.image = image // UIImage(contentsOfFile: "person0.jpg")
             nameLabel.text = person.name
-            //            ageLabel.text = String(person.age)
-            
+       
+            print(person.name)
         }
     }
     

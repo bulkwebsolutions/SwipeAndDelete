@@ -8,16 +8,19 @@
 
 import UIKit
 
+
+
 class CardStack: UIView {
     
     // Add initializers
+    var people = [Person]()
     
     // This is base on how it class and subclass initializers relate to its super class
     
     
     // Add Array of card view
+  
     var cards: [CardView] = []
-    
     
     
     override init(frame: CGRect) {
@@ -34,52 +37,69 @@ class CardStack: UIView {
     
     func defaultInit() {
         // Here we add our ppl, this should be done in the ViewController
-        
-//        let mvc = MainViewController()
-//        let people = mvc.getContacts()
+ 
+//        let contact = Contact()
+//        contact.getContacts()
 //        
-//        
-//        for person in people {
-//            let cardClass = CardStack()
-//            cardClass.addPerson(person) // .addPerson(person)
+//        let cardClass = CardStack()
+//        for person in contact.people {
+//            
+//            people.append(person)
 //        }
+//        
+//        cardClass.addPerson(people)
         
         
-        //        for person in people {
-        //           addPerson(person)
-        //        }
+        let contact = Contact()
+        contact.getContacts()
+        
+
+        let newArray = contact.people[0..<20]
+        
+        for person in newArray {
+            addPerson(person)
+          //  people.append(person)
+        }
+        
+        
         
     }
     
     
     func addPerson(person: Person) {
-        
+       
         // Add card to our card stack
         // Create a new card for each person
-        let card = CardView()
-        card.person = person
         
+      //  for person in people {
+            
+         let card = CardView()
+            
+            card.person = person
+            
+            // cards.append(card)
+            
+            self.addSubview(card)
+            
+            card.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint(item: card, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 0).active = true
+            NSLayoutConstraint(item: card, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0).active = true
+            NSLayoutConstraint(item: card, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0).active = true
+            NSLayoutConstraint(item: card, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0).active = true
+            
+            cards.append(card)
+            
+            self.sendSubviewToBack(card)
+            
+            setupTransforms(0)
+            
+            // Here we will be adding gesture recognizer
+            if cards.count == 1 {
+                card.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(CardStack.pan(_:))))
+            }
         
-        
-        self.addSubview(card)
-        
-        card.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint(item: card, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 0).active = true
-        NSLayoutConstraint(item: card, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0).active = true
-        NSLayoutConstraint(item: card, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0).active = true
-        NSLayoutConstraint(item: card, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0).active = true
-        
-        cards.append(card)
-        
-        self.sendSubviewToBack(card)
-        
-        setupTransforms(0)
-        
-        // Here we will be adding gesture recognizer
-        if cards.count == 1 {
-            card.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(CardStack.pan(_:))))
-        }
-        
+            
+     //   }
         
     }
     
