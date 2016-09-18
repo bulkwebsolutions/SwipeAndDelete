@@ -22,6 +22,7 @@
 		35BBAE651D8DA7FB00157046 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35BBAE641D8DA7FB00157046 /* Main.storyboard */; };
 		35BBAE671D8DA82D00157046 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BBAE661D8DA82D00157046 /* MainViewController.swift */; };
 		35BBAE691D8DF2E600157046 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BBAE681D8DF2E600157046 /* Contact.swift */; };
+		35CBA1B91D8F08A9009264B4 /* StatusPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CBA1B81D8F08A9009264B4 /* StatusPill.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		35BBAE641D8DA7FB00157046 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		35BBAE661D8DA82D00157046 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		35BBAE681D8DF2E600157046 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		35CBA1B81D8F08A9009264B4 /* StatusPill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPill.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +81,9 @@
 				35BBAE661D8DA82D00157046 /* MainViewController.swift */,
 				35BBAE531D8DA7BB00157046 /* Assets.swift */,
 				35BBAE541D8DA7BB00157046 /* CardStack.swift */,
-				35BBAE551D8DA7BB00157046 /* CardView.swift */,
 				35BBAE681D8DF2E600157046 /* Contact.swift */,
+				35BBAE551D8DA7BB00157046 /* CardView.swift */,
+				35CBA1B81D8F08A9009264B4 /* StatusPill.swift */,
 				35BBAE641D8DA7FB00157046 /* Main.storyboard */,
 				35BBAE481D8DA78400157046 /* Assets.xcassets */,
 				35BBAE631D8DA7C800157046 /* images */,
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35CBA1B91D8F08A9009264B4 /* StatusPill.swift in Sources */,
 				35BBAE441D8DA78400157046 /* ViewController.swift in Sources */,
 				35BBAE421D8DA78400157046 /* AppDelegate.swift in Sources */,
 				35BBAE571D8DA7BB00157046 /* CardStack.swift in Sources */,
@@ -341,6 +345,7 @@
 				35BBAE521D8DA78400157046 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
