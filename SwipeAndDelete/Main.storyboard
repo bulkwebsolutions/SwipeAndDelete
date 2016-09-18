@@ -20,25 +20,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oSB-hb-XhC" customClass="CardStack" customModule="SwipeAndDelete" customModuleProvider="target">
-                                <frame key="frameInset" minX="156" minY="120" width="288" height="360"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSB-hb-XhC" customClass="CardStack" customModule="SwipeAndDelete" customModuleProvider="target">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="oSB-hb-XhC" secondAttribute="height" multiplier="0.8" id="agN-a6-dqB"/>
+                                    <constraint firstAttribute="width" secondItem="oSB-hb-XhC" secondAttribute="height" multiplier="0.8" constant="-137" id="agN-a6-dqB"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="oSB-hb-XhC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2M5-aY-6IR"/>
-                            <constraint firstItem="oSB-hb-XhC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="aJ3-sb-CMH"/>
-                            <constraint firstItem="oSB-hb-XhC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nqg-pJ-kej"/>
+                            <constraint firstItem="oSB-hb-XhC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="6.5" id="2M5-aY-6IR"/>
+                            <constraint firstItem="oSB-hb-XhC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" constant="199.80000000000001" id="aJ3-sb-CMH"/>
+                            <constraint firstItem="oSB-hb-XhC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-0.5" id="nqg-pJ-kej"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-356" y="107"/>
+            <point key="canvasLocation" x="-356" y="106.59670164917542"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="sdb-0e-XOP">

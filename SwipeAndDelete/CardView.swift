@@ -23,7 +23,7 @@ class CardView: UIView {
     }
     
     // UIImage intializer
-    let imageView = UIImageView()
+    var imageView = UIImageView()
     let nameLabel = UILabel()
     let ageLabel = UILabel()
     
@@ -58,13 +58,14 @@ class CardView: UIView {
         NSLayoutConstraint(item: imageView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 0).active = true
         NSLayoutConstraint(item: imageView, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0).active = true
         NSLayoutConstraint(item: imageView, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0).active = true
+        NSLayoutConstraint(item: imageView, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 101, constant: 90).active = true
         
         // HEIGHT - Now the height of the image View is going to be base on the current view size, so its going to be a % of the total view
         NSLayoutConstraint(item: imageView, attribute: .Height, relatedBy: .Equal, toItem: self, attribute: .Height, multiplier: 0.9, constant: 0).active = true
         
         
         // Name
-        NSLayoutConstraint(item: nameLabel, attribute: .Top, relatedBy: .Equal, toItem: imageView, attribute: .Bottom, multiplier: 1, constant: 0).active = true
+        NSLayoutConstraint(item: nameLabel, attribute: .Top, relatedBy: .Equal, toItem: imageView, attribute: .Bottom, multiplier: 1, constant: -180).active = true
         NSLayoutConstraint(item: nameLabel, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 7).active = true
         NSLayoutConstraint(item: nameLabel, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0).active = true
         
@@ -85,8 +86,9 @@ class CardView: UIView {
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
         
-        self.imageView.contentMode = .ScaleAspectFill
-        self.imageView.clipsToBounds = true
+        
+        self.imageView = UIImageView(frame: CGRectMake(0, 0, 343, 400))
+        self.addSubview(self.imageView);
         
         
     }
