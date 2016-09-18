@@ -15,8 +15,9 @@ class CardView: UIView {
             
             // Property Configuration
             let image = UIImage(data: person.image)
-            imageView.image = image // UIImage(contentsOfFile: "person0.jpg")
+            imageView.image = image
             nameLabel.text = person.name
+            phoneNumberLabel.text = person.phoneNumber
        
             print(person.name)
         }
@@ -25,7 +26,7 @@ class CardView: UIView {
     // UIImage intializer
     var imageView = UIImageView()
     let nameLabel = UILabel()
-    let ageLabel = UILabel()
+    let phoneNumberLabel = UILabel()
     
     
     
@@ -46,7 +47,7 @@ class CardView: UIView {
         self.backgroundColor = UIColor.whiteColor()
         
         // Loop through each view that we add it and make some property changes on those view
-        for v in [imageView, nameLabel, ageLabel] {
+        for v in [imageView, nameLabel, phoneNumberLabel] {
             // set auto layout programmatically
             v.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(v)
@@ -69,17 +70,17 @@ class CardView: UIView {
         NSLayoutConstraint(item: nameLabel, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 7).active = true
         NSLayoutConstraint(item: nameLabel, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0).active = true
         
-        // Age
-        NSLayoutConstraint(item: ageLabel, attribute: .Top, relatedBy: .Equal, toItem: imageView, attribute: .Bottom, multiplier: 1, constant: 0).active = true
-        NSLayoutConstraint(item: ageLabel, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: -7).active = true
-        NSLayoutConstraint(item: ageLabel, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0).active = true
+        // Phone Number
+        NSLayoutConstraint(item: phoneNumberLabel, attribute: .Top, relatedBy: .Equal, toItem: imageView, attribute: .Bottom, multiplier: 1, constant: -180).active = true
+        NSLayoutConstraint(item: phoneNumberLabel, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: -7).active = true
+        NSLayoutConstraint(item: phoneNumberLabel, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0).active = true
         
         
         nameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         nameLabel.textAlignment = .Left
         
-        ageLabel.font = UIFont(name: "HelveticaNeue-Light", size: 17)
-        ageLabel.textAlignment = .Right
+        phoneNumberLabel.font = UIFont(name: "HelveticaNeue-Light", size: 17)
+        phoneNumberLabel.textAlignment = .Right
         
         
         // Styling

@@ -77,20 +77,20 @@ var people = [Person]()
         
         for person in results {
             
-//            if let unwrapped = person.thumbnailImageData {
-//                let eachContact = Person(name: person.givenName, image: unwrapped)
-//                people.append(eachContact)
-//            }
+            let test = NSData() 
             
-            let test = NSData()
-            
-            let eachContact = Person(name: person.givenName, image: person.thumbnailImageData ?? test)
-            people.append(eachContact)
-            
+            for ContctNumVar: CNLabeledValue in person.phoneNumbers
+            {
+                
+                let MobNumVar  = (ContctNumVar.value as! CNPhoneNumber).valueForKey("digits") as? String
+                let eachContact = Person(name: person.givenName, image: person.thumbnailImageData ?? test, phoneNumber: MobNumVar!)
+                people.append(eachContact)
+                print(eachContact)
+            }
             
         }
         
-        print(people.count)
+        
     }
 
 }

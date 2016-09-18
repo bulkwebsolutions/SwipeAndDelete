@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Contacts
 
 // A person structure is going to represent one person
 
 struct Person {
     var name: String
     var image: NSData
+    var phoneNumber: String
+    
 }
 
 /**
