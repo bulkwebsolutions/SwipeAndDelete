@@ -15,6 +15,7 @@ class CardStack: UIView {
     
     // Add initializers
     var people = [Person]()
+    var threePeople = [Person]()
     
     // This is base on how it class and subclass initializers relate to its super class
     
@@ -55,15 +56,24 @@ class CardStack: UIView {
         contact.getContacts()
         
 
-        let newArray = contact.people[0..<20]
+     //   let newArray = contact.people[0...20]
         
-        for person in newArray {
-            addPerson(person)
-          //  people.append(person)
+        for person in contact.people {
+         //   addPerson(person)
+            people.append(person)
         }
         
+        managePeople(people)
         
+    }
+    
+    
+    func managePeople(allPeople: [Person]) {
         
+        for person in allPeople[0...2] {
+            threePeople.append(person)
+            addPerson(person)
+        }
     }
     
     
@@ -170,6 +180,7 @@ class CardStack: UIView {
         }
     }
     
+    
     func pan(gesture: UIPanGestureRecognizer) {
         let card = gesture.view! as! CardView
         
@@ -210,6 +221,10 @@ class CardStack: UIView {
             
             let percentBlockKeep = {
                 self.cards.removeAtIndex(self.cards.indexOf(card)!)
+                self.people.removeFirst()
+                self.threePeople.removeFirst()
+
+                
                 self.setupGestures()
                 card.removeGestureRecognizer(card.gestureRecognizers![0])
                 
@@ -229,19 +244,23 @@ class CardStack: UIView {
                 UIView.animateWithDuration(1.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: normVelY, options: [], animations: { () -> Void in
                     card.center.y = y
                     }, completion: nil)
+                
+                
+                
+
+                
+                
             }
             
             
             let percentBlockDelete = {
                 self.cards.removeAtIndex(self.cards.indexOf(card)!)
+                self.people.removeFirst()
+                self.threePeople.removeFirst()
                 
-                // Delete from Contact
                 
                 self.deleteFromContact(card.nameLabel.text!)
-                
-                
-                
-                
+            
                 self.setupGestures()
                 card.removeGestureRecognizer(card.gestureRecognizers![0])
                 
@@ -267,8 +286,29 @@ class CardStack: UIView {
             
             if percent > 0.2 {
                 percentBlockKeep()
+                
+                
+                if self.threePeople.isEmpty {
+                    self.subviews.forEach({ $0.removeFromSuperview() })
+                    self.managePeople(self.people)
+//                    UIView.animateWithDuration(0.1, animations: {
+//                       
+//                    })
+                }
+
+                
             } else if percent < -0.2 {
                 percentBlockDelete()
+                
+                if self.threePeople.isEmpty {
+                    self.subviews.forEach({ $0.removeFromSuperview() })
+                    self.managePeople(self.people)
+                    //                    UIView.animateWithDuration(0.1, animations: {
+                    //
+                    //                    })
+                }
+                
+                
             } else {
                 let normVelX = -velocity.x / translation.x
                 let normVelY = -velocity.y / translation.y
@@ -292,12 +332,19 @@ class CardStack: UIView {
             }
             
             
+           
+            
+            
+            
             UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.65, initialSpringVelocity: 1, options: [], animations: { () -> Void in
                 self.setupTransforms(0)
                 }, completion: nil)
             
             
+            
         }
+        
+       
 
         
     }
