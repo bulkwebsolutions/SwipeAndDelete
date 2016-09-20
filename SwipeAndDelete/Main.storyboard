@@ -21,37 +21,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSB-hb-XhC" customClass="CardStack" customModule="SwipeAndDelete" customModuleProvider="target">
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.15586600759999999" green="0.15586600759999999" blue="0.15586600759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="oSB-hb-XhC" secondAttribute="height" multiplier="0.8" constant="-109.20000000000005" id="agN-a6-dqB"/>
+                                    <constraint firstAttribute="width" secondItem="oSB-hb-XhC" secondAttribute="height" multiplier="0.8" constant="-75.600000000000023" id="agN-a6-dqB"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="754" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uw-x7-pTM">
                                 <frame key="frameInset" minX="151" minY="39" width="73" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVR-TU-CSM">
                                 <frame key="frameInset" minX="185" minY="75" width="39" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.15586600759606783" green="0.15586600759606783" blue="0.15586600759606783" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="oSB-hb-XhC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="42" id="2M5-aY-6IR"/>
-                            <constraint firstItem="oSB-hb-XhC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" constant="128.80000000000001" id="aJ3-sb-CMH"/>
+                            <constraint firstItem="oSB-hb-XhC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="21" id="2M5-aY-6IR"/>
+                            <constraint firstItem="oSB-hb-XhC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" constant="86.800000000000011" id="aJ3-sb-CMH"/>
                             <constraint firstItem="oSB-hb-XhC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-2.5" id="nqg-pJ-kej"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countLabel" destination="0Uw-x7-pTM" id="QmZ-Ge-Umn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-356" y="106.59670164917542"/>
+            <point key="canvasLocation" x="60" y="88.605697151424295"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="sdb-0e-XOP">
@@ -69,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inN-So-vrx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1329" y="177"/>
+            <point key="canvasLocation" x="1095" y="89"/>
         </scene>
     </scenes>
 </document>

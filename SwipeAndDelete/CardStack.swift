@@ -10,7 +10,6 @@ import UIKit
 import Contacts
 
 
-
 class CardStack: UIView {
     
     // Add initializers
@@ -18,7 +17,6 @@ class CardStack: UIView {
     var threePeople = [Person]()
     
     // This is base on how it class and subclass initializers relate to its super class
-    
     
     // Add Array of card view
   
@@ -280,6 +278,9 @@ class CardStack: UIView {
                 UIView.animateWithDuration(1.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: normVelY, options: [], animations: { () -> Void in
                     card.center.y = y
                     }, completion: nil)
+                
+                
+                
             }
             
             
@@ -307,6 +308,22 @@ class CardStack: UIView {
                     //
                     //                    })
                 }
+                
+                contactCount = String(self.people.count)
+                
+                let vc = MainViewController()
+                vc.setLabel()
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
             } else {

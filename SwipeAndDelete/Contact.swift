@@ -9,6 +9,7 @@
 import Foundation
 import Contacts
 
+var contactCount = String()
 
 class Contact {
     
@@ -85,12 +86,13 @@ var people = [Person]()
                 let MobNumVar  = (ContctNumVar.value as! CNPhoneNumber).valueForKey("digits") as? String
                 let eachContact = Person(name: person.givenName, image: person.thumbnailImageData ?? test, phoneNumber: MobNumVar!)
                 people.append(eachContact)
+                
                // print(eachContact)
             }
             
         }
         
-        
+       contactCount = String(people.count)
     }
 
 }

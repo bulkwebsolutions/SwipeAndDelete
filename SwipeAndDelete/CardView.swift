@@ -91,7 +91,7 @@ class CardView: UIView {
         self.clipsToBounds = true
         
         
-        self.imageView = UIImageView(frame: CGRectMake(0, 0, 343, 400))
+        self.imageView = UIImageView(frame: CGRectMake(0, 0, 343, 300))
         self.imageView.clipsToBounds = true
         self.addSubview(self.imageView)
         
