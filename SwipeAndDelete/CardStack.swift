@@ -37,17 +37,6 @@ class CardStack: UIView {
     
     func defaultInit() {
         // Here we add our ppl, this should be done in the ViewController
- 
-//        let contact = Contact()
-//        contact.getContacts()
-//        
-//        let cardClass = CardStack()
-//        for person in contact.people {
-//            
-//            people.append(person)
-//        }
-//        
-//        cardClass.addPerson(people)
         
         
         let contact = Contact()
@@ -79,8 +68,7 @@ class CardStack: UIView {
        
         // Add card to our card stack
         // Create a new card for each person
-        
-      //  for person in people {
+      
             
          let card = CardView()
             
@@ -107,8 +95,7 @@ class CardStack: UIView {
                 card.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(CardStack.pan(_:))))
             }
         
-            
-     //   }
+        
         
     }
     
@@ -292,9 +279,7 @@ class CardStack: UIView {
                 if self.threePeople.isEmpty {
                     self.subviews.forEach({ $0.removeFromSuperview() })
                     self.managePeople(self.people)
-//                    UIView.animateWithDuration(0.1, animations: {
-//                       
-//                    })
+
                 }
 
                 
@@ -304,9 +289,7 @@ class CardStack: UIView {
                 if self.threePeople.isEmpty {
                     self.subviews.forEach({ $0.removeFromSuperview() })
                     self.managePeople(self.people)
-                    //                    UIView.animateWithDuration(0.1, animations: {
-                    //
-                    //                    })
+  
                 }
                 
                 contactCount = String(self.people.count)
