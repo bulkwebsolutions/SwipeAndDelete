@@ -14,37 +14,19 @@ let mySpecialNotificationKey = "oneKey"
 class MainViewController: UIViewController {
     
   
-//    var people = [Person]()
     @IBOutlet var countLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         writeToLable()
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.writeToLable), name: mySpecialNotificationKey, object: nil)
-        
-//        let contact = Contact()
-//        contact.getContacts()
-//        
-//        let cardClass = CardStack()
-//        for person in contact.people {
-//            
-//            people.append(person)
-//        }
-//        
-//        cardClass.addPerson(people)
     }
     
     
     
     func setLabel() {
-        
         NSNotificationCenter.defaultCenter().postNotificationName(mySpecialNotificationKey, object: nil)
-        
-        
-        
     }
     
     
