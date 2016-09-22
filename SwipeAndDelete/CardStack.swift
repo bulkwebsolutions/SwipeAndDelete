@@ -13,29 +13,24 @@ import Contacts
 class CardStack: UIView {
     
     // Add initializers
-    var people = [Person]()
+    var csPeople = [Person]()
     var threePeople = [Person]()
-    
-    // This is base on how it class and subclass initializers relate to its super class
-    
-    // Add Array of card view
-  
     var cards: [CardView] = []
     
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        defaultInit()
-    }
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        defaultInit()
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        // fatalError("init(coder:) has not been implemented")
+//        defaultInit()
+//    }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        // fatalError("init(coder:) has not been implemented")
-        defaultInit()
-    }
     
-    
-    func defaultInit() {
+    func fetchContact() {
         // Here we add our ppl, this should be done in the ViewController
         
         
@@ -45,12 +40,16 @@ class CardStack: UIView {
 
      //   let newArray = contact.people[0...20]
         
-        for person in contact.people {
-         //   addPerson(person)
-            people.append(person)
+        if contact.people.count > 0 {
+            for person in contact.people {
+                csPeople.append(person)
+            }
+            
         }
         
-        managePeople(people)
+        if csPeople.count > 0 {
+            managePeople(csPeople)
+        }
         
     }
     
@@ -61,6 +60,7 @@ class CardStack: UIView {
             threePeople.append(person)
             addPerson(person)
         }
+        
     }
     
     
@@ -73,6 +73,7 @@ class CardStack: UIView {
          let card = CardView()
             
             card.person = person
+            
             
             // cards.append(card)
             
@@ -91,6 +92,7 @@ class CardStack: UIView {
             setupTransforms(0)
             
             // Here we will be adding gesture recognizer
+        
             if cards.count == 1 {
                 card.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(CardStack.pan(_:))))
             }
@@ -206,7 +208,7 @@ class CardStack: UIView {
             
             let percentBlockKeep = {
                 self.cards.removeAtIndex(self.cards.indexOf(card)!)
-                self.people.removeFirst()
+                self.csPeople.removeFirst()
                 self.threePeople.removeFirst()
 
                 
@@ -240,7 +242,7 @@ class CardStack: UIView {
             
             let percentBlockDelete = {
                 self.cards.removeAtIndex(self.cards.indexOf(card)!)
-                self.people.removeFirst()
+                self.csPeople.removeFirst()
                 self.threePeople.removeFirst()
                 
                 
@@ -278,7 +280,7 @@ class CardStack: UIView {
                 
                 if self.threePeople.isEmpty {
                     self.subviews.forEach({ $0.removeFromSuperview() })
-                    self.managePeople(self.people)
+                    self.managePeople(self.csPeople)
 
                 }
 
@@ -288,11 +290,11 @@ class CardStack: UIView {
                 
                 if self.threePeople.isEmpty {
                     self.subviews.forEach({ $0.removeFromSuperview() })
-                    self.managePeople(self.people)
+                    self.managePeople(self.csPeople)
   
                 }
                 
-                contactCount = String(self.people.count)
+                contactCount = String(self.csPeople.count)
                 
                 let vc = MainViewController()
                 vc.setLabel()

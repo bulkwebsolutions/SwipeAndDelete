@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSB-hb-XhC" customClass="CardStack" customModule="SwipeAndDelete" customModuleProvider="target">
-                                <color key="backgroundColor" red="0.15586600759999999" green="0.15586600759999999" blue="0.15586600759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="oSB-hb-XhC" secondAttribute="height" multiplier="0.8" constant="-75.600000000000023" id="agN-a6-dqB"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="754" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uw-x7-pTM">
                                 <frame key="frameInset" minX="151" minY="39" width="73" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -42,11 +34,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.15586600759606783" green="0.15586600759606783" blue="0.15586600759606783" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="oSB-hb-XhC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="21" id="2M5-aY-6IR"/>
-                            <constraint firstItem="oSB-hb-XhC" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" constant="86.800000000000011" id="aJ3-sb-CMH"/>
-                            <constraint firstItem="oSB-hb-XhC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-2.5" id="nqg-pJ-kej"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="countLabel" destination="0Uw-x7-pTM" id="QmZ-Ge-Umn"/>

@@ -11,6 +11,8 @@ import Contacts
 
 var contactCount = String()
 
+
+
 class Contact {
     
 var allContainers: [CNContainer] = []
@@ -52,7 +54,10 @@ var people = [Person]()
             print(error)
         }
         
-        fetchContactsFromContainer(contactStore, keysToFetch: keysToFetch)
+        if allContainers.count > 0 {
+            fetchContactsFromContainer(contactStore, keysToFetch: keysToFetch)
+        }
+        
         
     }
     
@@ -70,7 +75,10 @@ var people = [Person]()
             }
         }
         
-        addResultsToArray()
+        if results.count > 0 {
+            addResultsToArray()
+        }
+        
     }
     
     

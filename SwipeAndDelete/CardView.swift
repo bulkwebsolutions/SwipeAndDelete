@@ -46,7 +46,8 @@ class CardView: UIView {
     }
     
     
-    func defaultInit() {
+    func defaultInit(){
+
         self.backgroundColor = UIColor.whiteColor()
         
         // Loop through each view that we add it and make some property changes on those view
