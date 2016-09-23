@@ -9,33 +9,48 @@
 import Foundation
 import Contacts
 
+let userPressedOK = "userPressedOK"
+let userPressedOKTest = "userPressedOKTest"
+
+
 var contactCount = String()
-
-
+var people = [Person]()
+var accepted = Bool()
 
 class Contact {
     
+    
+    
+    
 var allContainers: [CNContainer] = []
 var results: [CNContact] = []
-var people = [Person]()
 
 
+
+    
     func getContacts() {
+        
+        
         
         let store = CNContactStore()
         
         if CNContactStore.authorizationStatusForEntityType(.Contacts) == .NotDetermined {
             store.requestAccessForEntityType(.Contacts, completionHandler: { (authorized: Bool, error: NSError?) -> Void in
                 if authorized {
+                    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Contact.go), name: userPressedOK, object: nil)
                     self.retrieveContactsWithStore(store)
+          
                 }
             })
         } else if CNContactStore.authorizationStatusForEntityType(.Contacts) == .Authorized {
+            accepted = true
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Contact.secondGo), name: userPressedOKTest, object: nil)
             self.retrieveContactsWithStore(store)
         }
         
     }
 
+    
 
     func retrieveContactsWithStore(store: CNContactStore) {
         let contactStore = CNContactStore()
@@ -100,8 +115,30 @@ var people = [Person]()
             
         }
         
+        if accepted == false {
+            NSNotificationCenter.defaultCenter().postNotificationName(userPressedOK, object: nil)
+        } else {
+            NSNotificationCenter.defaultCenter().postNotificationName(userPressedOKTest, object: nil)
+        }
+        
+        
+        
        contactCount = String(people.count)
     }
+    
+    
+    @objc func go() {
+        print("go")
+    }
+    
+    @objc func secondGo() {
+//        let mvc = MainViewController()
+//        mvc.go()
+        
+        print("go2")
+    }
+    
+
 
 }
 

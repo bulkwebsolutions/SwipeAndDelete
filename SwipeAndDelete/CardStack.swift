@@ -34,14 +34,14 @@ class CardStack: UIView {
         // Here we add our ppl, this should be done in the ViewController
         
         
-        let contact = Contact()
-        contact.getContacts()
+//        let contact = Contact()
+//        contact.getContacts()
         
 
      //   let newArray = contact.people[0...20]
         
-        if contact.people.count > 0 {
-            for person in contact.people {
+        if people.count > 0 {
+            for person in people {
                 csPeople.append(person)
             }
             
