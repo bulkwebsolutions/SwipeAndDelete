@@ -71,28 +71,29 @@ class CardView: UIView {
         
         // Name
         NSLayoutConstraint(item: nameLabel, attribute: .Top, relatedBy: .Equal, toItem: imageView, attribute: .Bottom, multiplier: 1, constant: -180).active = true
-        NSLayoutConstraint(item: nameLabel, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 7).active = true
+        NSLayoutConstraint(item: nameLabel, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 115).active = true
         NSLayoutConstraint(item: nameLabel, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0).active = true
         
         // Phone Number
-        NSLayoutConstraint(item: phoneNumberLabel, attribute: .Top, relatedBy: .Equal, toItem: imageView, attribute: .Bottom, multiplier: 1, constant: -180).active = true
-        NSLayoutConstraint(item: phoneNumberLabel, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: -7).active = true
+        NSLayoutConstraint(item: phoneNumberLabel, attribute: .Top, relatedBy: .Equal, toItem: imageView, attribute: .Bottom, multiplier: 1, constant: -120).active = true
+        NSLayoutConstraint(item: phoneNumberLabel, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: -100).active = true
         NSLayoutConstraint(item: phoneNumberLabel, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0).active = true
         
         
-        nameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 20)
-        nameLabel.textAlignment = .Left
+        nameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 30)
+        nameLabel.textAlignment = .Center
         
         phoneNumberLabel.font = UIFont(name: "HelveticaNeue-Light", size: 17)
-        phoneNumberLabel.textAlignment = .Right
+        phoneNumberLabel.textAlignment = .Center
         
         
         // Styling
-        self.layer.cornerRadius = 10
+     //   self.layer.cornerRadius = 10
         self.clipsToBounds = true
         
         
-        self.imageView = UIImageView(frame: CGRectMake(0, 0, 343, 300))
+        self.imageView = UIImageView(frame: CGRectMake(87, 30, 125, 125))
+        imageView.layer.cornerRadius = imageView.frame.height/2
         self.imageView.clipsToBounds = true
         self.addSubview(self.imageView)
         
@@ -104,10 +105,10 @@ class CardView: UIView {
             v.alpha = 0
         }
         
-        nopeLabel.text = "Nope"
+        nopeLabel.text = "Delete"
         nopeLabel.color = UIColor(red: 0.9, green: 0.29, blue: 0.23, alpha: 1)
         
-        likeLabel.text = "Like"
+        likeLabel.text = "Keep"
         likeLabel.color = UIColor(red: 0.101, green: 0.737, blue: 0.611, alpha: 1)
         
         

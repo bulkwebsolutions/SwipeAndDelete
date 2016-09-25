@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
         
         dispatch_async(GlobalUserInitiatedQueue) {
             let cs = CardStack()
-            cs.frame = CGRectMake(10,10,self.view.frame.width-25,self.view.frame.height-50)
+            cs.frame = CGRectMake(10,10,self.view.frame.width-20,self.view.frame.height-50)
             cs.fetchContact()
             
             
